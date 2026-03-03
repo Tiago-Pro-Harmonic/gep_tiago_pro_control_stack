@@ -1,0 +1,40 @@
+from glob import glob
+import os
+from setuptools import find_packages, setup
+
+package_name = "tiago_pro_lfc_bringup"
+
+setup(
+    name=package_name,
+    version="0.0.0",
+    packages=find_packages(exclude=["test"]),
+    data_files=[
+        ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
+        ("share/" + package_name, ["package.xml"]),
+        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
+        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
+        (
+            os.path.join("share", package_name, "config/fixed"),
+            glob("config/fixed/*.yaml"),
+        ),
+        # (
+        #     os.path.join("share", package_name, "config/free_flyer"),
+        #     glob("config/free_flyer/*.yaml"),
+        # ),
+    ],
+    install_requires=["setuptools"],
+    zip_safe=True,
+    maintainer="cpene",
+    maintainer_email="pene.clement@gmail.com",
+    description="Provide tools to launch a Tiago-pro robot with a linear feedback controller in Gazebo harmonic",
+    license="MIT OR Apache-2.0",
+    extras_require={
+        "test": [
+            "pytest",
+        ],
+    },
+    entry_points={
+        "console_scripts": [
+        ],
+    },
+)
