@@ -17,6 +17,14 @@ ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py \
                 gazebo_version:=gazebo
 ```
 
+In another terminal, launch :
+```bash
+ros2 launch tiago_pro_lfc_bringup switch_to_lfc_controllers.launch.py 
+# and then
+ros2 launch tiago_pro_lfc_bringup pd_plus_controller.launch.py
+# You should see Tiago pro arm moving !
+```
+
 License
 ---------
 
