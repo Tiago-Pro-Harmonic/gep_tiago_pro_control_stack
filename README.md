@@ -1,29 +1,20 @@
 What is working :
-- launching tiago with one arm
-- head and left arm controller
+- launching full tiago pro
 - navigation with cmd_vel for omni_base
-- default camera + lidar
+- camera (head + wrist) + lidar
+
+What is not working : 
+- probleme with mimic joint for end effector. I do not see any movement activating dedicated controller
 
 
 ```bash
 # basic launch 
-ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py \
-                is_public_sim:=True \
-                world_name:=empty \
-                arm_type_left:=no-arm \
-                end_effector_right:=no-end-effector \
-                end_effector_left:=no-end-effector \
-                tuck_arm:=False \
-                gazebo_version:=gazebo
+ros2 launch tiago_pro_lfc_bringup tiago_pro_common.launch.py use_gazebo:=true
+
+# launch agimus demo
+ros2 launch agimus_demo_02_simple_pd_plus_tiago_pro bringup.launch.py use_gazebo:=true
 ```
 
-In another terminal, launch :
-```bash
-ros2 launch tiago_pro_lfc_bringup switch_to_lfc_controllers.launch.py 
-# and then
-ros2 launch tiago_pro_lfc_bringup pd_plus_controller.launch.py
-# You should see Tiago pro arm moving !
-```
 
 License
 ---------
