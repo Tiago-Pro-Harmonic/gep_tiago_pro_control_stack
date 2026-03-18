@@ -33,7 +33,10 @@ def generate_launch_description():
                 "tuck_arm", default_value="False", choices=["True", "False"]
             ),
             DeclareLaunchArgument(
-                "has_wrist_camera", default_value="True", choices=["True", "False"]
+                "has_wrist_camera", default_value="False", choices=["True", "False"]
+            ),
+            DeclareLaunchArgument(
+                "gzclient", default_value="True", choices=["True", "False"]
             ),
             DeclareLaunchArgument("pkg", default_value="tiago_pro_lfc_bringup"),
             DeclareLaunchArgument(
@@ -67,6 +70,7 @@ def generate_launch_description():
                     "end_effector_left": LaunchConfiguration("end_effector_left"),
                     "tuck_arm": LaunchConfiguration("tuck_arm"),
                     "has_wrist_camera": LaunchConfiguration("has_wrist_camera"),
+                    "gzclient": LaunchConfiguration("gzclient"),
                     "gazebo_version": "gazebo",
                 }.items(),
             ),
