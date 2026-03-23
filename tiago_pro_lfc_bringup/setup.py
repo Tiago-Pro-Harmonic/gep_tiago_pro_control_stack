@@ -17,10 +17,10 @@ setup(
             os.path.join("share", package_name, "config/fixed"),
             glob("config/fixed/*.yaml"),
         ),
-        # (
-        #     os.path.join("share", package_name, "config/free_flyer"),
-        #     glob("config/free_flyer/*.yaml"),
-        # ),
+        (
+            os.path.join("share", package_name, "config/free_flyer"),
+            glob("config/free_flyer/*.yaml"),
+        ),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
