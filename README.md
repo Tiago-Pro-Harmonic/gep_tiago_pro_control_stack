@@ -2,9 +2,8 @@ What is working :
 - launching full tiago pro
 - navigation with cmd_vel for omni_base
 - camera (head + wrist) + lidar
+- grippers command (grasp / release)
 
-What is not working : 
-- probleme with mimic joint for end effector. I do not see any movement activating dedicated controller
 
 
 ```bash
